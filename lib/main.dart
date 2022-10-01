@@ -13,37 +13,37 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(title: Text('App'),),
+        body: Container(
+          height: 150,
+          padding: EdgeInsets.all(10),
+          child: Row(
+            children: [
+              Image.asset('assets/camera.jpg', width: 200,),
+              Container(
+                width: 250,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('캐논 DSLR 100D(단렌즈, 충전기 16기가SD 포함)'),
+                    Text('금호동 끌올 10분 전'),
+                    Text("150만원"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.favorite),
+                        Text('4'),
+                      ],
+                    ),
+                  ],
+                ),
 
-        appBar: AppBar(title: Text('giryu'),), // 상단 위젯
+              ),
+            ],
 
-
-        body: Row( // (가로) 중단 위젯
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 가로 정렬 기능
-          crossAxisAlignment: CrossAxisAlignment.center, // 세로 정렬 기능
-          children: [
-            Icon(Icons.star),
-            Icon(Icons.star),
-            Icon(Icons.star),
-        ],
-      ),
-
-
-        bottomNavigationBar: BottomAppBar(
-
-          child: SizedBox( // Container는 무거워서 간단한건 SizedBox 사용 가능
-            height: 50,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-              children: [
-                Icon(Icons.phone),
-                Icon(Icons.message),
-                Icon(Icons.contact_page),
-              ],
-            ),
           ),
-        )
-
+          
+        ),
       )
     );
   }
